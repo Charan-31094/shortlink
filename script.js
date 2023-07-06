@@ -10,7 +10,7 @@ const db = new polybase.Polybase({
     defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
   })
   const col = db.collection("LinkData");
-  async function listRecords () {
+  async function findRecords () {
     const records = await col.where("id", "==", id).get();
     let s=records.data[0].data
    let k=JSON.stringify(records.data[0].data)
@@ -22,5 +22,13 @@ const db = new polybase.Polybase({
   </div>
   <button type="button" onclick="redirectToURL('${s.full_url}')" name="redirect">Redirect</button>`
   }
-
-  listRecords ()    
+try{
+  findRecords ()    }
+catch(err){
+    document.getElementById("ch").innerHTML =` <div class="info">
+    <p>Full URL: <strong>Not Found</strong></p>
+    <p>Short Name: <strong>Not Found</strong></p>
+    <p>Email: <strong>Not Found</strong></p>
+    </div>
+    <button type="button" onclick="redirectToURL('link.nixer.ml/gnew')" name="redirect">Create a New Link</button>`
+}
