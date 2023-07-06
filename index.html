@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Template</title>
+  <script src = 'https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
 
+  <script src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .card {
+      width: 50%;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 5%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card .info {
+      margin-bottom: 10px;
+    }
+    
+    .card button {
+      display: block;
+      width: 100%;
+      padding: 2%;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .card button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+        <div id="ch"></div>
+     
+    </div>
+  </div>
+</body>
+</html>
