@@ -1,6 +1,6 @@
 value=window.location.pathname
-val=value.split("/")[2]
-console.log(val)
+val=value.split("/")
+console.log(val[1])
 id=btoa(val)
 
 function redirectToURL(k) {
