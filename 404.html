@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>No redirect</title>
+  <title>Redirecting</title>
+  <script src = 'https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
 
+  <script src="script.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -46,17 +48,9 @@
   </style>
 </head>
 <body>
-    <script>
-        function redirectToURL() {
-    window.location.href ="\gnew";
-  }
-    </script>
   <div class="container">
     <div class="card">
-        <div class="info">
-            <h4>No Redirect</h4>
-          </div>
-          <button type="button" onclick="redirectToURL()" name="redirect">create new link</button>
+        <div id="ch"></div>
      
     </div>
   </div>
