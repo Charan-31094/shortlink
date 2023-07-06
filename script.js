@@ -1,7 +1,7 @@
 value=window.location.pathname
 val=value.split("/")
 console.log(val[1])
-id=atob(val)
+id=atob(val[1])
 
 function redirectToURL(k) {
     window.location.href ="https://"+k;
