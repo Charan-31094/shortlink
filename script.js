@@ -1,7 +1,7 @@
 value=window.location.pathname
 val=value.split("/")[2]
-id=atob(val)
-console.log(id)
+id=btoa(val)
+
 function redirectToURL(k) {
     window.location.href ="https://"+k;
   }
