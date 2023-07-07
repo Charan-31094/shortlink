@@ -7,7 +7,7 @@ id=btoa(val[1])
 
 
 function redirectToURL(k) {
-  if(text.includes("https://"))
+  if(k.includes("https://"))
   {
     window.location.href =k;
   }
