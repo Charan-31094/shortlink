@@ -22,9 +22,11 @@ const db = new polybase.Polybase({
     try{
     const records = await col.where("id", "==", id).get();
    
-    let s=records.data[0].data  
+    let s=records.data[0].data 
+    redirectToURL(s.full_url) 
    let k=JSON.stringify(records.data[0].data)
    console.log(k)
+   
     document.getElementById("ch").innerHTML =` <div class="info">
     <p>Full URL: <strong>${s.full_url}</strong></p>
     <p>Short Name: <strong>${s.name}</strong></p>
