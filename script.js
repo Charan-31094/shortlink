@@ -18,9 +18,6 @@ async function updateRecord(clicks) {
     const recordData = await col
         .record(id)
         .call("incrementClicks", [click]);
-
-document.getElementById("hh").innerHTML=`<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
-
 }
 catch(err){
     console.log(err)
@@ -44,8 +41,13 @@ function redirectToURL(k) {
     const records = await col.where("id", "==", id).get();
    
     let s=records.data[0].data 
-    redirectToURL(s.full_url) 
-    updateclicks(s.clicks)
+    try{
+      console.log("sending s.clicks",s.clicks)
+    updateclicks(s.clicks)}
+    catch(e){
+      console.log(e)}
+    // redirectToURL(s.full_url) 
+    
   //  let k=JSON.stringify(records.data[0].data)
   //  console.log(k)
    
