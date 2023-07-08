@@ -46,6 +46,19 @@ const db = new polybase.Polybase({
 })
 const col = db.collection("LinkData");
 
+function geturl(email)
+{
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (input.match(validRegex)) {
+          alert("Valid email address!");
+        } else { alert("Invalid email address!");}
+      
+      }
+
+
+
+
+
 //find records
 async function geturl(email) {
     document.getElementById("submit_email").disabled = true;
