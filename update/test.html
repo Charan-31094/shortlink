@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
+
+    <script>
+
+        const db = new polybase.Polybase({
+            defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
+        })
+        try{
+        const col = db.collection("LinkData");
+        var k=btoa("klerp")
+        updateRecord();
+        async function updateRecord() {
+            const recordData = await col
+                .record(k)
+                .call("updateLink", ["lms.kluniversity.in","changed to lms"]);
+        }}
+        catch(err){
+            console.log(err)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

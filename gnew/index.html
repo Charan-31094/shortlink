@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Crete a new Short Link</title>
+<title>Create a new Short Link</title>
 <meta charset="utf-8">
 <script src = 'https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
 
@@ -76,27 +76,27 @@
 <div id="form-message-success" class="mb-4">
 
 </div>
-<form >
+<form  id="myForm"    onsubmit="return send()" >
 <div class="row">
 <div class="col-md-12">
 
 </div>
 <div class="col-md-12">
 <div class="form-group">
-<input type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
 </div>
 </div>
 <div class="col-md-12">
 <div class="form-group">
-<input type="text" class="form-control" name="full_url" id="full_url" placeholder="Enter Full URL www.ex.com/rufbrbujrfbujrbv..........">
+<input type="text" class="form-control" name="full_url" id="full_url" required placeholder="Enter Full URL www.ex.com/rufbrbujrfbujrbv..........">
 </div>
 </div>
 <div class="col-md-12">
 <div class="form-group">
-    <input type="text" class="form-control" name="short_url" id="short_url" placeholder="/short_url"  >
+    <input type="text" class="form-control" name="short_url" id="short_url" minlength="4"  required placeholder="/short_url "  >
 </div>
 <div class="form-group">
-    <input type="text" class="form-control" name="nam" id="nam" placeholder="NickName for short url">
+    <input type="text" class="form-control" name="nam" id="nam" placeholder="NickName for short url"  required>
     </div>
     <!-- <div class="form-group">
         <input type="text" class="form-control" name="name" id="name"  placeholder="info about url">
@@ -104,7 +104,7 @@
 </div>
 <div class="col-md-12">
 <div class="form-group">
-<input type="button" value="Create a new url" onclick="createRecord(nam.value,full_url.value,short_url.value,email.value)"  class="btn btn-primary">
+<input type="submit" value="Create a new url"   class="btn btn-primary">
 <div class="submitting" ></div>
 <div id="status"></div>
 <script class="col-md-12" src="script.js"></script>
