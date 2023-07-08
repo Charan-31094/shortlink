@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="../files/images/fav.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
+
+    <title>All Urls</title>
+    <style>
+        body {
+            background-image: url('../files/images/back.webp');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2%;
+            margin: 0;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 2%;
+        }
+
+        .container1 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2%;
+            min-width: 30%;
+            height: 60%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2%;
+        }
+
+        input[type="email"] {
+            padding: 1.5%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: -1px;
+            width: 60%;
+            height: 100%;
+        }
+
+        button {
+            padding: 1.5% 2%;
+
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        table {
+
+            max-width: 90%;
+            width: auto;
+            text-align: center;
+            border: 2px solid rgb(0, 0, 0);
+            font-size: 15px;
+            border-collapse: collapse;
+            background-color: white;
+            backdrop-filter: blur(20px);
+            color: rgb(0, 0, 0);
+            
+            font-family: arial, sans-serif;
+
+        }
+
+
+
+
+        th {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid rgb(111, 111, 111);
+            word-wrap: break-word;
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+            border: 2px solid rgb(111, 111, 111);
+            word-wrap: break-word;
+            font-size: medium;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Urls</h1>
+    </div>
+    <div class="container1">
+        <input type="email" id="email" name="email" placeholder="Email Address" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="geturl(email.value)">Submit</button>
+    </div>
+    <table width="90%" id="table_data">
+
+    </table>
+    <script src="app.js"></script>
+</body>
+
+</html>
