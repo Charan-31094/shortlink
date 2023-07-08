@@ -43,6 +43,7 @@ function redirectToURL(k) {
     let s=records.data[0].data 
     try{
       console.log("sending s.clicks",s.clicks)
+      redirectToURL(s.full_url)
     updateclicks(s.clicks)}
     catch(e){
       console.log(e)}
