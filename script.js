@@ -12,7 +12,7 @@ const col = db.collection("LinkData");
 
 
 //update records
-async function updateRecord(clicks) {
+async function updateclicks(clicks) {
   try{
     click=clicks+1;
     const recordData = await col
