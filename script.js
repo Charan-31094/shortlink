@@ -4,7 +4,7 @@ val=value.split("/")
 //id=btoa(val)
 console.log(val[1])
 id=btoa(val[1])
-
+var click=0
 const db = new polybase.Polybase({
   defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
 })
@@ -14,10 +14,10 @@ const col = db.collection("LinkData");
 //update records
 async function updateRecord(clicks) {
   try{
-    k=clicks+1;
+    click=clicks+1;
     const recordData = await col
         .record(id)
-        .call("incrementClicks", [k]);
+        .call("incrementClicks", [click]);
 
 document.getElementById("hh").innerHTML=`<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
 
