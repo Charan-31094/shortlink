@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstract Cards</title>
+    <style>
+        body {
+            background-image: url("../files/images/back.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 300px;
+    max-width: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: height 0.3s;
+    height: 300px;
+    overflow: hidden;
+    color: white;
+}
+
+@media screen and (max-width: 900px) {
+    .card-container {
+        justify-content: space-between;
+    }
+
+    .card {
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: calc(100% - 20px);
+    }
+}
+
+
+        .card img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h1, .card h3, .card p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-container a {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+        }
+
+        .qr-code {
+            position: absolute;
+            top: calc(30% - 30px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1;
+        }
+
+        .card:hover .qr-code {
+            display: block;
+        }
+
+        .card:hover {
+            height: auto;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card-container">
+            
+            <div class="card" id="card1">
+                <div class="qr-code">
+                    <img id="qrCode1" src="" alt="QR Code">
+                </div>
+                <img id="image1" src="" alt="Abstract Image">
+                <h1>Card 1</h1>
+                <h3>Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <a href="update-link" target="_blank">Update</a>
+                    <button class="delete-button" onclick="deleteCard(this,'hi')">Delete</button>
+                </div>
+            </div>
+
+            <div class="card" id="card2">
+                <div class="qr-code">
+                    <img id="qrCode2" src="" alt="QR Code">
+                </div>
+                <img id="image2" src="" alt="Abstract Image">
+                <h1>Card 2</h1>
+                <h3>Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <a href="update-link" target="_blank">Update</a>
+                    <button class="delete-button" onclick="deleteCard(this)">Delete</button>
+                </div>
+            </div>
+
+            <div class="card" id="card3">
+                <div class="qr-code">
+                    <img id="qrCode3" src="" alt="QR Code">
+                </div>
+                <img id="image3" src="" alt="Abstract Image">
+                <h1>Card 3</h1>
+                <h3>Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <a href="update-link" target="_blank">Update</a>
+                    <button class="delete-button" onclick="deleteCard(this)">Delete</button>
+                </div>
+            </div>
+
+            <div class="card" id="card4">
+                <div class="qr-code">
+                    <img id="qrCode4" src="" alt="QR Code">
+                </div>
+                <img id="image4" src="" alt="Abstract Image">
+                <h1>Card 4</h1>
+                <h3>Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <a href="update-link" target="_blank">Update</a>
+                    <button class="delete-button" onclick="deleteCard(this)">Delete</button>
+                </div>
+            </div>
+
+            <div class="card" id="card5">
+                <div class="qr-code">
+                    <img id="qrCode5" src="" alt="QR Code">
+                </div>
+                <img id="image5" src="" alt="Abstract Image">
+                <h1>Card 5</h1>
+                <h3>Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <a href="update-link" target="_blank">Update</a>
+                    <button class="delete-button" onclick="deleteCard(this)">Delete</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function deleteCard(button,a) {
+            var cardContainer = button.closest(".card");
+            cardContainer.remove();
+            console.log(a);
+        }
+
+        function generateRandomImageLink() {
+            var randomImages = [
+                "https://img.freepik.com/free-photo/cream-smooth-textured-paper-background_53876-101819.jpg?size=626&ext=jpg&ga=GA1.2.2080235410.1688872253&semt=ais",
+                "https://img.freepik.com/free-photo/white-texture_1160-788.jpg?size=626&ext=jpg&ga=GA1.2.2080235410.1688872253&semt=ais",
+                "https://img.freepik.com/free-photo/blue-cotton-fabric_53876-88939.jpg?size=626&ext=jpg&ga=GA1.2.2080235410.1688872253&semt=ais",
+                "https://img.freepik.com/free-photo/cardboard-wallpaper-template_1194-6785.jpg?size=626&ext=jpg&ga=GA1.1.2080235410.1688872253&semt=ais",
+                "https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg?size=626&ext=jpg",
+                "https://img.freepik.com/free-vector/grunge-watercolor-background-using-pastel-colours_1048-6530.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-vector/abstract-pink-watercolor-texture-design-background_1055-14111.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-vector/white-abstract-background-3d-paper-style_23-2148398981.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-vector/watercolor-stains-abstract-background_23-2149107181.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/premium-photo/colorful-watercolor-grunge-texture-background-soft-background_3248-586.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-photo/3d-geometrical-texture_23-2149168862.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-photo/white-splash-ink-blue-background_1409-1757.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/free-vector/watercolor-background_91008-2.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais",
+                "https://img.freepik.com/premium-vector/white-abstract-texture-background_745217-602.jpg?size=626&ext=jpg&ga=GA1.1.290949994.1688879249&semt=ais"
+            ];
+
+            var randomIndex = Math.floor(Math.random() * randomImages.length);
+            return randomImages[randomIndex];
+        }
+
+        function generateQRCode(link, qrCodeId, imageSize) {
+            // Replace with your QR code generation logic
+            var qrCodeElement = document.getElementById(qrCodeId);
+            var qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=${imageSize}x${imageSize}`;
+            qrCodeElement.src = qrCodeURL;
+            qrCodeElement.style.width = imageSize + "px";
+            qrCodeElement.style.height = imageSize + "px";
+        }
+
+        function initializeCard(cardId, imageId, qrCodeId, imageSize, qrCodeLink) {
+    var card = document.getElementById(cardId);
+    var image = document.getElementById(imageId);
+    var qrCode = document.getElementById(qrCodeId);
+
+    var randomImageLink = generateRandomImageLink();
+    image.src = randomImageLink;
+
+    generateQRCode(qrCodeLink, qrCodeId, imageSize);
+
+    card.addEventListener("mouseover", function() {
+        qrCode.style.display = "block";
+    });
+
+    card.addEventListener("mouseout", function() {
+        qrCode.style.display = "none";
+    });
+}
+
+initializeCard("card1", "image1", "qrCode1", 100, "https://example.com/qrcode-link");
+initializeCard("card2", "image2", "qrCode2", 100, "https://example.com/qrcode-link");
+initializeCard("card3", "image3", "qrCode3", 100, "https://example.com/qrcode-link");
+// Add more initializeCard calls for other cards
+
+
+        // Search functionality
+        var searchInput = document.getElementById("searchInput");
+        var cardContainers = document.getElementsByClassName("card");
+
+        searchInput.addEventListener("input", function() {
+            var searchValue = searchInput.value.toLowerCase();
+
+            Array.from(cardContainers).forEach(function(cardContainer) {
+                
+                var cardTitle = cardContainer.getElementsByTagName("h1")[0].innerText.toLowerCase();
+
+                if (cardTitle.includes(searchValue)) {
+                    cardContainer.style.display = "block";
+                } else {
+                    cardContainer.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
