@@ -1,135 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>All Urls</title>
-  <style>
-    body {
-      background-image: url('../files/images/back.webp');
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 2%;
-      margin: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
+  <script>
+    const db = new polybase.Polybase({
+      defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
+    })
+    const col = db.collection("LinkData");
+    async function updateRecord(id) {
+      try {
+        const recordData = await col
+          .record(id)
+          .call("deleteLink", []);
+        console.log(recordData);
+
+
+      }
+      catch (err) {
+        console.log(err)
+      }
     }
-    
-    h1 {
-      color: white;
-      font-size: 2em;
-      margin-bottom: 2%;
-    }
-    .container1{
-        display: flex;
-        align-items: center;
-        margin-bottom: 2%;
-        min-width: 30%;
-        height: 60%;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 2%;
-    }
-    
-    input[type="email"] {
-      padding: 1.5%;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-right: -1px;
-      width: 60%;
-      height: 100%;
-    }
-    
-    button {
-      padding: 1.5% 2%;
-
-      background-color: #007bff;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-
-    }
-    
-    table{ width:100%; 
-  text-align:center;
-  border:1px solid rgb(255, 255, 255);
- font-size:20px;
- border-collapse:collapse;
- background-color: transparent;
-      backdrop-filter: blur(20px);
-      color: white;
-        border-radius: 10px;
-}
-
-
-th{
-  background-color:#a0c2cf;
-  width:auto; 
-  text-align:center;
-   padding:5px 0;
-   border:2px solid rgb(168, 168, 168);
-   border-radius: 10px;
-
-
-
-}
-td{width:auto;
-   text-align:center; 
-   padding:5px 0;
-   border:1px solid rgb(192, 192, 192);
-   border-radius: 10px;
-}
-tr:nth-child(odd) 
-{
-  background: transparent;
-  font-weight: 800;
-  
-}
-tr:hover {
-  background-color: #ffffff;
-  color: rgb(255, 255, 255);
-  border-color: white;
-  border-width: 2px;
-  transition: 0.5s;
-}
-tr{
-    border-radius: 10px;
-
-}
-th{
-  font-size: 30px; 
-  background-color: transparent;
-}
-  </style>
+    updateRecord(btoa("vg"))
+  </script>
 </head>
 
 <body>
-  <div class="container">
-    <h1>All Urls</h1>
-  </div>
-  <div class="container1">
-    <input type="email" placeholder="Email Address" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button>Submit</button>
-  </div>
-  <table>
-    <tr>
-      <th>Field A</th>
-      <th>Field B</th>
-      <th>Field C</th>
-      <th>Field D</th>
-    </tr>
-    <tr>
-      <td>Data A</td>
-      <td>Data B</td>
-      <td>Data C</td>
-      <td>Data D</td>
-    </tr>
-    <!-- Add more rows as needed -->
-  </table>
+
 </body>
 
 </html>

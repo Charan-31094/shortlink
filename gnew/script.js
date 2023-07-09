@@ -66,7 +66,7 @@ async function createRecord(name, full_url, short_url, email) {
     const recordData = await col.create([
       id, name, full_url, short_url, email, date,0
     ]);
-    document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url}">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${short_url}')">Copy</button>`
+    document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url} target="_blank"">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${short_url}')">Copy</button>`
 
   }
   catch (e) {

@@ -30,7 +30,7 @@ async function updateRecord(full_url,name) {
         .record(id)
         .call("updateLink", [full_url,name,0]);
 
-document.getElementById("hh").innerHTML=`<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
+document.getElementById("hh").innerHTML=`<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}" target="_blank">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
 
 }
 catch(err){
