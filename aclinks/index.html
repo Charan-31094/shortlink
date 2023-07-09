@@ -13,7 +13,8 @@
   <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
   <style>
     body {
-      background-image: url('../files/images/back.webp');
+
+      background-image: url("https://media.istockphoto.com/id/1405248468/photo/deep-purple-blue-abstract-background-gradient-toned-fabric-surface-texture-dark-colorful.webp?b=1&s=170667a&w=0&k=20&c=Ne2pfLGFodMojjEitXLI-IUjXML98qk_sPoxEdWUBN8=");
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -21,10 +22,15 @@
       justify-content: flex-start;
       padding: 2%;
       margin: 0;
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    height: 100vh; /* Set body height to 100% of viewport height */
+    margin: 0; 
+        }
 
     h1 {
-      color: white;
+      color: rgb(255, 255, 255);
       font-size: 2em;
       margin-bottom: 2%;
     }
@@ -33,8 +39,8 @@
       display: flex;
       align-items: center;
       margin-bottom: 2%;
-      min-width: 30%;
-      height: 60%;
+      min-width: 40%;
+      height: 5%;
     }
 
     .container4 {
@@ -54,7 +60,7 @@
 
     button {
       padding: 1.5% 2%;
-
+      height: 100%;
       background-color: #007bff;
       border: none;
       color: white;
@@ -201,12 +207,7 @@
   </style>
 
   <style>
-    body {
-            background-image: url("../files/images/back.webp");
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 20px;
-        }
+   
 
         .container {
             display: flex;
@@ -234,10 +235,12 @@
     justify-content: center;
     gap: 20px;
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 .card {
-    width: calc(33.33% - 20px);
-    max-width: 300px;
+    width: 300px;
+    max-width: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 20px;
@@ -250,7 +253,6 @@
     transition: height 0.3s;
     height: 300px;
     overflow: hidden;
-    color: black;
 }
 
 @media screen and (max-width: 900px) {
@@ -270,6 +272,11 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .card {
+        height: auto;
+    }
+}
 
 
 
@@ -345,7 +352,7 @@
 <body>
   <div class="container4">
     <h1>9url.tech</h1>
-  </div>
+  </div><br>
   <div class="container5">
     <input type="email" id="email" name="email" placeholder="Email Address" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
