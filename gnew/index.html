@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+ 
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="../manifest.json">
+  <script>
+      if ("serviceWorker" in navigator) {
+    // register service worker
+    navigator.serviceWorker.register("../service-worker.js");
+  }
+  </script>
     <script src="https://charan-31094.github.io/ReqFiles/stopdebug.js"></script>
 <title>Create a new Short Link</title>
 <meta charset="utf-8">
