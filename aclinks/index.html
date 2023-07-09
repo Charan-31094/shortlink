@@ -4,11 +4,11 @@
 <head>
   <link rel="icon" type="image/x-icon" href="../files/images/darkicon.png">
   <meta charset="utf-8">
-    <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Make it simple">
-    <meta property="og:image" content="../files/images/darkicon.png">
-    <title>9URL</title>
+  <meta name="theme-color" content="#000000" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Make it simple">
+  <meta property="og:image" content="../files/images/darkicon.png">
+  <title>9URL</title>
   <script src="https://charan-31094.github.io/ReqFiles/stopdebug.js" defer></script>
   <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
   <style>
@@ -22,12 +22,15 @@
       justify-content: flex-start;
       padding: 2%;
       margin: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 20px;
-    height: 100vh; /* Set body height to 100% of viewport height */
-    margin: 0; 
-        }
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px;
+      height: 100vh;
+      margin: 0;
+      background-attachment: fixed;
+
+
+    }
 
     h1 {
       color: rgb(255, 255, 255);
@@ -207,145 +210,147 @@
   </style>
 
   <style>
-   
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-        }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+    .search-bar input[type="text"] {
+      width: 300px;
+      height: 30px;
+      padding: 5px;
+      font-size: 16px;
+    }
 
-        .search-bar input[type="text"] {
-            width: 300px;
-            height: 30px;
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-::-webkit-scrollbar {
-    display: none;
-}
-.card {
-    width: 300px;
-    max-width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(30px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    transition: height 0.3s;
-    height: 300px;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 900px) {
     .card-container {
-        justify-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
     }
 
     .card {
+      width: 300px;
+      max-width: 100%;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(30px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: height 0.3s;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    @media screen and (max-width: 900px) {
+      .card-container {
+        justify-content: space-between;
+      }
+
+      .card {
         width: calc(50% - 20px);
         margin-bottom: 20px;
+      }
     }
-}
 
-@media screen and (max-width: 600px) {
-    .card {
+    @media screen and (max-width: 600px) {
+      .card {
         width: calc(100% - 20px);
+      }
     }
-}
 
-@media screen and (max-width: 400px) {
-    .card {
+    @media screen and (max-width: 400px) {
+      .card {
         height: auto;
+      }
     }
-}
 
 
 
-        .card img {
-            width: 100%;
-            max-height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    .card img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-        .card h1, .card h3, .card p {
-            text-align: center;
-            margin: 10px 0;
-        }
+    .card h1,
+    .card h3,
+    .card p {
+      text-align: center;
+      margin: 10px 0;
+    }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
 
-        .button-container button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .button-container button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .button-container a {
-            padding: 10px 20px;
-            margin: 0 5px;
-            background-color: #4caf50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+    .button-container a {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-        .delete-button {
-            background-color: #f44336;
-        }
+    .delete-button {
+      background-color: #f44336;
+    }
 
-        .qr-code {
-            position: absolute;
-            top: calc(30% - 30px);
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-            display: none;
-            z-index: 1;
-        }
+    .qr-code {
+      position: absolute;
+      top: calc(30% - 30px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1;
+    }
 
-        .card:hover .qr-code {
-            display: block;
-        }
+    .card:hover .qr-code {
+      display: block;
+    }
 
-        .card:hover {
-            height: auto;
-        }
+    .card:hover {
+      height: auto;
+    }
 
-        .qr-code img {
-            width: 100%;
-            height: auto;
-        }
+    .qr-code img {
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
@@ -357,7 +362,7 @@
     <input type="email" id="email" name="email" placeholder="Email Address" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button id="submit_email" onclick="geturl(email.value)">Get Links</button>
-  </div>
+  </div><br><br><br><br><br>
   <div id="loader"></div>
 
   <div id="cont"></div>

@@ -1,141 +1,160 @@
 <!doctype html>
 <html lang="en">
+
 <head>
- 
-   
-  </script>
-    <script src="https://charan-31094.github.io/ReqFiles/stopdebug.js"></script>
     <meta charset="utf-8">
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Make it simple">
     <meta property="og:image" content="../files/images/darkicon.png">
-  
-    <title>9URL</title>
-<script src = 'https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
-<link rel="icon" type="image/x-icon" href="../files/images/darkicon.png">
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
-<style>
 
-::-webkit-scrollbar {
-    display: none;
-}
-.button {
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  border: 2px solid #ffffff; /* Green */
-    border-radius: 12px;
-}
-</style>
+    <title>9URL</title>
+    <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
+
+    <script src="https://charan-31094.github.io/ReqFiles/stopdebug.js"></script>
+    <link rel="icon" type="image/x-icon" href="../files/images/darkicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .button {
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            border: 2px solid #ffffff;
+            /* Green */
+            border-radius: 12px;
+        }
+
+        #qrcode {
+            border-color: 3px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
 
 <body>
-<section class="ftco-section img bg-hero" style="background-attachment: fixed; background-image: url(../files/images/back.webp);">
-<div class="container">
-<div class="row justify-content-center">
-<div class="col-md-6 text-center mb-5">
-<h2 class="heading-section">Create a new Short Link</h2>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-lg-11">
-<div class="wrapper">
-<div class="row no-gutters justify-content-between">
-<div class="col-lg-6 d-flex align-items-stretch">
-<div class="info-wrap w-100 p-5">
-<!-- <h3 class="mb-4">Contact us</h3> -->
-<div class="dbox w-100 d-flex align-items-start">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="fa fa-link"></span>
-</div>
-<div class="text pl-4">
-<p><span>No.of links active</span> <a href="../aclinks/">Click here to Get Links</a></p>
-</div>
-</div>
+    <section class="ftco-section img bg-hero"
+        style="background-attachment: fixed; background-image: url(../files/images/back.webp);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Create a new Short Link</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="wrapper">
+                        <div class="row no-gutters justify-content-between">
+                            <div class="col-lg-6 d-flex align-items-stretch">
+                                <div class="info-wrap w-100 p-5">
+                                    <div class="dbox w-100 d-flex align-items-start">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-link"></span>
+                                        </div>
+                                        <div class="text pl-4">
+                                            <p><span>No.of links active</span> <a href="../aclinks/">Click here to Get
+                                                    Links</a></p>
+                                        </div>
+                                    </div>
 
-<div class="dbox w-100 d-flex align-items-start">
-<div class="icon d-flex align-items-center justify-content-center">
-</div>
+                                    <div class="dbox w-100 d-flex align-items-start">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                        </div>
+                                    </div>
+                                    <div class="dbox w-100 d-flex align-items-start">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-globe"></span>
+                                        </div>
+                                        <div class="text pl-4">
+                                            <p><span>Website</span> <a href="#">9URL.TECH</a></p>
+                                        </div>
+                                    </div>
 
-</div>
-<div class="dbox w-100 d-flex align-items-start">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="fa fa-globe"></span>
-</div>
-<div class="text pl-4">
-<p><span>Website</span> <a href="#">link.nixer.ml</a></p>
-</div>
-</div>
 
-<div class="dbox w-100 d-flex align-items-start">
-    <div class="icon d-flex align-items-center justify-content-center">
-        <span class="fa fa-database"></span> 
-    </div>
-    <div class="text pl-4">
-        <p><span>Status</span> <a id="hh"></a></p>
-    </div>
-    </div>
-</div>
-</div>
+                                    <div class="dbox w-100 d-flex align-items-start">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-database"></span>
+                                        </div>
+                                        <div class="text pl-4">
+                                            <p><span>Status</span> <a id="hh"></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="dbox w-100 d-flex align-items-start">
+                                        <div class="icon d-flex align-items-center justify-content-center">
+                                            <span class="fa fa-qrcode fa-beat-fade"></span>
+                                        </div>
+                                        <div class="text pl-4">
+                                            <p><span>QR-Code</span> <img id="qrcode"></img>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
 
-<div class="col-lg-5">
-<div class="contact-wrap w-100 p-md-5 p-4">
-<h3 class="mb-4">New Shorty</h3>
-<div id="form-message-warning" class="mb-4"></div>
-<div id="form-message-success" class="mb-4">
+                            </div>
 
-</div>
-<form  id="myForm"    onsubmit="return send()" >
-<div class="row">
-<div class="col-md-12">
+                            <div class="col-lg-5">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4">New Shorty</h3>
+                                    <div id="form-message-warning" class="mb-4"></div>
+                                    <div id="form-message-success" class="mb-4"></div>
+                                    <form id="myForm" onsubmit="return send()">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="email" id="email"
+                                                        placeholder="Email" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="full_url"
+                                                        id="full_url" required
+                                                        placeholder="Enter Full URL www.ex.com/rufbrbujrfbujrbv..........">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="short_url"
+                                                        id="short_url" minlength="4" required placeholder="/short_url">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="nam" id="nam"
+                                                        placeholder="NickName for short url" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Create a new url"
+                                                        class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                    <div id="status"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
 
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="text" class="form-control" name="full_url" id="full_url" required placeholder="Enter Full URL www.ex.com/rufbrbujrfbujrbv..........">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-    <input type="text" class="form-control" name="short_url" id="short_url" minlength="4"  required placeholder="/short_url "  >
-</div>
-<div class="form-group">
-    <input type="text" class="form-control" name="nam" id="nam" placeholder="NickName for short url"  required>
-    </div>
-    <!-- <div class="form-group">
-        <input type="text" class="form-control" name="name" id="name"  placeholder="info about url">
-        </div> -->
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input type="submit" value="Create a new url"   class="btn btn-primary">
-<div class="submitting" ></div>
-<div id="status"></div>
-
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<script  src="script.js"></script>
-<style>
-       body{
-  
-  background-attachment: fixed;
-}
-</style>
+    <style>
+        body {
+            background-attachment: fixed;
+        }
+    </style>
 </body>
+
 </html>

@@ -60,12 +60,8 @@ function redirectToURL(k) {
   // <button type="button" onclick="redirectToURL('${s.full_url}')" name="redirect">Redirect</button>` 
     }
   catch(e){
-    document.getElementById("ch").innerHTML =` <div class="info">
-    <p>Full URL: <strong>Not Found</strong></p>
-    <p>Short Name: <strong>Not Found</strong></p>
-    <p>Email: <strong>Not Found</strong></p>
-    </div>
-    <button type="button" onclick="redirectToURL('link.nixer.ml/gnew')" name="redirect">Create a New Link</button>`
+    alert("Short URL not found \n click 'OK' to redirect to home page")
+    location.replace("../gnew")
   }
   }
   findRecords ()    

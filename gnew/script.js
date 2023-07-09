@@ -67,7 +67,7 @@ async function createRecord(name, full_url, short_url, email) {
       id, name, full_url, short_url, email, date,0
     ]);
     document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url} target="_blank"">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${short_url}')">Copy</button>`
-
+    generateQRCode("https://9url.tech/"+short_url, "qrcode", 150)
   }
   catch (e) {
     if (e == "Error: record id already exists in collection") {
@@ -78,7 +78,14 @@ async function createRecord(name, full_url, short_url, email) {
   }
 }
 
-
+//qr
+function generateQRCode(link, qrCodeId, imageSize) {
+  var qrCodeElement = document.getElementById(qrCodeId);
+  var qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=${imageSize}x${imageSize}`;
+  qrCodeElement.src = qrCodeURL;
+  qrCodeElement.style.width = imageSize + "px";
+  qrCodeElement.style.height = imageSize + "px";
+}
 
 
 //copy

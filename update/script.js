@@ -3,49 +3,56 @@ const urlParams = new URLSearchParams(window.location.search);
 const uid = urlParams.get('shorty');
 
 console.log(uid)
-id=btoa(uid);
+id = btoa(uid);
 var m;
 
 //copy
 function copy(a) {
   navigator.clipboard.writeText(a);
-  var k=document.getElementById("but1")
-  k.innerHTML="Copied"
+  var k = document.getElementById("but1")
+  k.innerHTML = "Copied"
 }
 
-
+//qr
+function generateQRCode(link, qrCodeId, imageSize) {
+  var qrCodeElement = document.getElementById(qrCodeId);
+  var qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=${imageSize}x${imageSize}`;
+  qrCodeElement.src = qrCodeURL;
+  qrCodeElement.style.width = imageSize + "px";
+  qrCodeElement.style.height = imageSize + "px";
+}
 
 //connection to db
-  const db = new polybase.Polybase({
-      defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
-    })
-    const col = db.collection("LinkData");
+const db = new polybase.Polybase({
+  defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
+})
+const col = db.collection("LinkData");
 
 
 
 //update records
-async function updateRecord(full_url,name) {
-  try{
+async function updateRecord(full_url, name) {
+  try {
     const recordData = await col
-        .record(id)
-        .call("updateLink", [full_url,name,0]);
+      .record(id)
+      .call("updateLink", [full_url, name, 0]);
 
-document.getElementById("hh").innerHTML=`<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}" target="_blank">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
+    document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Updated Successfully</strong>&nbsp&nbsp<a href="/${uid}" target="_blank">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://link.nixer.ml/${uid}')">Copy</button>`
 
-}
-catch(err){
+  }
+  catch (err) {
     console.log(err)
-}
+  }
 }
 
 //find records
-    async function findRecords () {
-      try{
-      const records = await col.where("id", "==", id).get();
-     
-      let s=records.data[0].data
-      m=s.email  
-      document.getElementById("ch").innerHTML =`<section class="ftco-section img bg-hero" style="background-image: url(../files/images/back.webp);">
+async function findRecords() {
+  try {
+    const records = await col.where("id", "==", id).get();
+
+    let s = records.data[0].data
+    m = s.email
+    document.getElementById("ch").innerHTML = `<section class="ftco-section img bg-hero" style="background-image: url(../files/images/back.webp);">
       <div class="container">
       <div class="row justify-content-center">
       <div class="col-md-6 text-center mb-5">
@@ -89,7 +96,17 @@ catch(err){
               <p><span>Status</span> <a id="hh"></a></p>
           </div>
           </div>
+          <div class="dbox w-100 d-flex align-items-start">
+          <div class="icon d-flex align-items-center justify-content-center">
+              <span class="fa fa-qrcode fa-beat-fade"></span>
+          </div>
+          <div class="text pl-4">
+              <p><span>QR-Code</span> <img id="qrcode"></img>
+          </div>
+          </p>
       </div>
+  </div>
+      
       </div>
       <div class="col-lg-5">
       <div class="contact-wrap w-100 p-md-5 p-4">
@@ -141,39 +158,43 @@ catch(err){
       </div>
       </div>
       </div>
-      </section>` }
-    catch(e){
-     console.log(e)
+      </section>`
+    generateQRCode("https://9url.tech/" + s.short_url, "qrcode", 150)
+  }
+  catch (e) {
+    console.log(e)
+    alert("short url not found")
+    location.replace("../gnew");
+  }
+}
+
+
+function send() {
+  try {
+
+    a = document.getElementById("nam").value;
+    b = document.getElementById('full_url').value
+    c = uid
+    d = document.getElementById('email').value
+    if (d == m) {
+      updateRecord(b, a);
     }
+    else {
+      document.getElementById("hh").innerHTML = `<p><strong style="color:palered">Email Doesn't match please enter the mail that have been entered while creating url</strong></p>`
     }
+  }
+  catch (e) {
+    console.log(e)
+   
+  }
+  return false;
+}
 
 
-    function send()
-    {
-      try{
-       
-        a=document.getElementById("nam").value;
-        b= document.getElementById('full_url').value
-        c=uid
-        d=document.getElementById('email').value
-        if(d == m)
-        {
-          updateRecord(b,a);
-        }
-        else{
-          document.getElementById("hh").innerHTML=`<p><strong style="color:palered">Email Doesn't match please enter the mail that have been entered while creating url</strong></p>`
-        }
-      }
-        catch(e){
-          console.log(e)
-        }
-        return false;
-    }
+if(uid!=null)
+{
 
-
-
- 
-
-
-
-    findRecords ()
+findRecords()}
+else{
+  alert("Server resopnded with error code 405")
+  location.replace("../gnew");}
