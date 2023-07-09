@@ -54,8 +54,8 @@ const col = db.collection("LinkData");
 
 function geturl(email) {
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if (input.match(validRegex)) {
-    alert("Valid email address!");
+  if (email.match(validRegex)) {
+    getur(email)
   } else { alert("Invalid email address!"); }
 
 }
@@ -65,7 +65,7 @@ function geturl(email) {
 
 
 //find records
-async function geturl(email) {
+async function getur(email) {
   document.getElementById("submit_email").disabled = true;
 
   document.getElementById("loader").innerHTML = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
@@ -202,11 +202,11 @@ function tabu(data) {
                 <img id="qr${s.short_url}" src="https" alt="QR Code">
             </div>
             <img id="ab${s.short_url}" src="" alt="Abstract Image">
-            <h1>${s.short_url}</h1>
+            <h1 style="color:black">${s.short_url}</h1>
             <h3>No of Clicks : ${s.clicks}</h3>
             <p>${s.full_url}</p>
             <div class="button-container">
-                <a href="../update/?shorty=${s.short_url}" target="_blank">Update</a>
+                <a href="../update/?shorty=${s.short_url}">Update</a>
                 <button class="copy-button" id="cb${s.short_url}" onclick="copy('${s.short_url}')">Copy</button>
                 <button class="delete-button" onclick="deleteCard(this,'${s.id}')">Delete</button>
             </div>
@@ -218,6 +218,5 @@ function tabu(data) {
   intialize(data)
 
 }
-
 
 
