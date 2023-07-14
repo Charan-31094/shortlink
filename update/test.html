@@ -2,34 +2,66 @@
 <html lang="en">
 
 <head>
+  <style>
+    body{
+      background-color: black;
+      color: white;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src='https://cdn.jsdelivr.net/npm/@polybase/client@latest/dist/bundle.min.js'></script>
   <script>
     const db = new polybase.Polybase({
-      defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
+      defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/notesv3",
     })
-    const col = db.collection("LinkData");
-    async function updateRecord(id) {
+    async function createrecord() {
+      const col = db.collection("User");
+
       try {
-        const recordData = await col
-          .record(id)
-          .call("deleteLink", []);
+        const recordData = await col.create([
+          "vemula.charan@gmail.com", "charan", "charan", 1
+        ]);
         console.log(recordData);
 
 
       }
       catch (err) {
-        console.log(err)
+        console.log(err);
       }
     }
-    updateRecord(btoa("vg"))
+
+    async function createrecorduserdata(a, b, c, d, e) {
+      const col = db.collection("UserData");
+
+      try {
+        const recordData = await col.create([
+          a, b, c, d, e]);
+        console.log(recordData);
+
+
+      }
+      catch (err) {
+        console.log(err);
+      }
+    }
+
+
+
+    var email = "vemula.charan9@gmail.com"
+    var date = new Date();
+    var dat = date.getTime();
+    var files = "f1"
+    var pages = "p1"
+     createrecorduserdata(btoa(email +"_dbfile_:"+ files +"_dbpage_:"+ pages), email, btoa(email +"_dbfile_:"+ files), email +"_dbfile_:"+ files +"_dbpage_:"+ pages, dat)
+    console.log(atob("dmVtdWxhLmNoYXJhbjlAZ21haWwuY29tX2RiZmlsZV86ZjFfZGJwYWdlXzpwMQ=="))
+
   </script>
 </head>
 
 <body>
-
+<h2 id="a"></h2>
 </body>
 
 </html>
