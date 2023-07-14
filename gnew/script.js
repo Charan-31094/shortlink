@@ -66,11 +66,7 @@ async function createRecord(name, full_url, short_url, email) {
     const recordData = await col.create([
       id, name, full_url, short_url, email, date,0
     ]);
-<<<<<<< HEAD
     document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url}" target="_blank"">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://9URL.TECH/${short_url}')">https://9URL.TECH/${short_url}   Copy</button>`
-=======
-    document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url} target="_blank">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://9URL.TECH/${short_url}')">Copy</button>`
->>>>>>> 3e49686152595eb870a491b855e0d52e028911e4
     generateQRCode("https://9url.tech/"+short_url, "qrcode", 150)
   }
   catch (e) {
