@@ -4,6 +4,7 @@ function setCookie(cname,cvalue,exdays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -25,8 +26,25 @@ function checkCookie() {
     console.log(user)
 k=document.getElementById("email")
 k.value=user
-
   } 
+  else {
+    k=document.getElementById("email")
+k.value=""}
+try{
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+  const name = urlParams.get('name');
+  const full_url = urlParams.get('full_url');
+  console.log(email,name,full_url)
+  if(email!=null && name!=null && full_url!=null){ 
+  document.getElementById("nam").value=name
+  document.getElementById("full_url").value=full_url
+  document.getElementById("email").value=email
+  document.getElementById("short_url").value=name
+  }}
+  catch(e){
+    console.log(e)
+  }
 
 }
 
@@ -94,5 +112,8 @@ function copy(a) {
   var k = document.getElementById("but1")
   k.innerHTML = a+"Copied"
 }
+
+
+
 
 checkCookie()
