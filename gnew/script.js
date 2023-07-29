@@ -35,25 +35,26 @@ try{
   const email = urlParams.get('email');
   const name = urlParams.get('name');
   const full_url = urlParams.get('full_url');
+   referral = urlParams.get('referral');
   console.log(email,name,full_url)
-  if(email!=null && name!=null && full_url!=null){ 
-  document.getElementById("nam").value=name
-  document.getElementById("full_url").value=full_url
+  if(email!=null && name!=null && full_url!=null && referral!=null){ 
+  document.getElementById("nam").value=atob(name)
+  document.getElementById("full_url").value=atob(full_url)
   document.getElementById("email").value=email
-  document.getElementById("short_url").value=name
+  document.getElementById("short_url").value=atob(name)
   }}
   catch(e){
     console.log(e)
   }
 
 }
+var referral=""
 
 //db connection
 const db = new polybase.Polybase({
   defaultNamespace: "pk/0x26b7b24287218ea9427e03112e34fb29e6603d1421903bedf5b825296f2d4f32831d76d700f243fbb768d935937675735ca28568f8604b10a33ac636a81fd9d2/links",
 })
 const col = db.collection("LinkData");
-
 //get from form
 function send() {
   try {
@@ -86,6 +87,13 @@ async function createRecord(name, full_url, short_url, email) {
     ]);
     document.getElementById("hh").innerHTML = `<strong style="color:white">Shorty Created Successfully</strong>&nbsp&nbsp<a href="/${short_url}" target="_blank"">Visit</a>&nbsp&nbsp<button type="button" id="but1" class="button" onClick="copy('https://9URL.TECH/${short_url}')">https://9URL.TECH/${short_url}   Copy</button>`
     generateQRCode("https://9url.tech/"+short_url, "qrcode", 150)
+    console.log(referral)
+    console.log(referral=="snotes")
+
+    if(referral=="snotes"){
+      console.log("snotes")
+    window.open(`${full_url}&shorturl=https://9url.tech/"${short_url}`, '_blank');
+  }
   }
   catch (e) {
     if (e == "Error: record id already exists in collection") {
