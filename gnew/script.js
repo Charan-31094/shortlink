@@ -92,7 +92,7 @@ async function createRecord(name, full_url, short_url, email) {
 
     if(referral=="snotes"){
       console.log("snotes")
-    window.open(`${full_url}&shorturl=https://9url.tech/"${short_url}`, '_blank');
+    window.open(`${full_url}&shorturl=https://9url.tech/${short_url}`, '_blank');
   }
   }
   catch (e) {
